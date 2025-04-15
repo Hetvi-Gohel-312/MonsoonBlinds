@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>All Cities - Monsoon Blinds</title>
+
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!-- Responsive-->
+    <link rel="stylesheet" href="css/responsive.css" />
+    <!-- fevicon -->
+    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <!-- font css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css" />
+    <!-- Tweaks for older IEs-->
+    <link
+      rel="stylesheet"
+      href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
+    />
+    <style>
+      /* General Styles */
+      * {
+        box-sizing: border-box;
+        transition: all 0.3s ease-in-out;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+        color: #333;
+
+        font-weight: normal;
+        overflow-x: hidden;
+        text-align: center;
+        background-image: url("images/banner-bg.png"),
+          url("images/client-bg.png");
+        background-position: top, center 100%;
+        background-repeat: no-repeat, no-repeat;
+        background-size: 100% auto, 100% auto;
+      }
+      /*nabar dropdown*/
+      /* Hide checkbox */
+      #toggleDropdown {
+        display: none;
+      }
+
+      /* Label acts as clickable link */
+      .dropdown-label {
+        cursor: pointer;
+        color: #333;
+        padding: 8px 15px;
+        text-decoration: none;
+        display: block;
+      }
+
+      /* Dropdown menu */
+      .dropdown-menu {
+        background: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        display: none;
+        position: absolute;
+        z-index: 1000;
+      }
+
+      /* Show dropdown when checked */
+      #toggleDropdown:checked + .dropdown-label + .dropdown-menu {
+        display: block;
+      }
+
+      /* Dropdown items */
+      .dropdown-item {
+        color: #333;
+        padding: 8px 15px;
+        text-decoration: none;
+        display: block;
+      }
+
+      /* Hover effect */
+      .dropdown-item:hover {
+        background: #007bff;
+        color: #fff;
+      }
+
+      /* Mobile view */
+      @media (max-width: 767px) {
+        .dropdown-menu {
+          position: static;
+          border: none;
+        }
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+
+      @media (min-width: 768px) {
+        .container {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      .click-here {
+        font-size: 16px;
+        color: #555;
+        display: block;
+
+        text-align: center;
+        font-weight: 500;
+      }
+
+      /* Section styling */
+      .section {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+
+      .section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Title and images */
+      .pro-title {
+        font-size: 24px;
+        font-weight: bold;
+        color: #2c3e50;
+        text-align: center;
+        margin: 10px 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .img-responsive {
+        width: 100%;
+        height: 400;
+        border-radius: 8px;
+        margin: 15px 0;
+      }
+
+      /* Contact section */
+      .contact2 {
+        margin: 5px 0;
+        text-align: center;
+      }
+
+      .contact2 a {
+        display: inline-block;
+        margin: 5px 10px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background 0.2s;
+      }
+
+      .contact2 a i {
+        margin-right: 8px;
+      }
+
+      .contact2 a:first-child {
+        background: #19af50;
+        color: white;
+      }
+
+      .contact2 a:last-child {
+        background: #d33a3a;
+        color: white;
+      }
+
+      .contact2 a:hover {
+        opacity: 0.9;
+      }
+
+      /* State and city links */
+      h1 {
+        color: #444;
+        font-size: 20px;
+        margin: 15px 0;
+        border-bottom: 2px solid #007bff;
+        display: inline-block;
+      }
+
+      a {
+        color: #007bff;
+        text-decoration: none;
+        transition: color 0.2s;
+        text-align: center;
+      }
+
+      a:hover {
+        color: #0056b3;
+        text-decoration: underline;
+      }
+
+      p {
+        margin: 8px 0;
+        font-size: 16px;
+      }
+      /* Vertical Contact Bar */
+      .vertical-contact-bar {
+        position: fixed;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        z-index: 999;
+      }
+
+      /* Common Icon Styles */
+      .vertical-contact-bar a {
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background 0.2s, transform 0.2s;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Different Colors */
+      .vertical-contact-bar .whatsapp {
+        background: #25d366;
+      }
+      .vertical-contact-bar .phone {
+        background: #007bff;
+      }
+      .vertical-contact-bar .email {
+        background: #ff5733;
+      }
+
+      /* Hover Effect */
+      .vertical-contact-bar a:hover {
+        transform: scale(1.1);
+        opacity: 0.9;
+      }
+
+      /* Responsive for Mobile */
+      @media (max-width: 768px) {
+        .vertical-contact-bar {
+          left: 5px;
+          gap: 10px;
+        }
+        .vertical-contact-bar a {
+          width: 40px;
+          height: 40px;
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <h1 style="font-size: clamp(18px, 8vw, 36px); color: black">
+          <b> Bao Blinds </b>
+        </h1>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+
+            <li class="nav-item">
+                    <a class="nav-link " href="products.html">Product</a>
+                </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="all-cities.html">All Cities</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- Fixed Contact -->
+    <div class="vertical-contact-bar">
+      <a
+        href="https://api.whatsapp.com/send?phone=916380655921&text=Hey%20Bao%20Blinds,%20can%20you%20share%20me%20more%20details,%20I%20am%20located%20at"
+        target="_blank"
+        class="whatsapp"
+      >
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="tel:+916379499902" class="phone">
+        <i class="fa fa-phone"></i>
+      </a>
+      <a href="mailto:info@baoblinds.com" class="email">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+
+    <div class="container">
+      <!-- Column 1 -->
+      <div class="section">
+        <a href="monsoonblinds.htm">
+          <h1 class="pro-title">PVC Blinds</h1>
+          <img
+            class="img-responsive"
+            src="images\p9.jpeg"
+            alt="Monsoon Blinds"
+          />
+          <span class="click-here">
+            <i class="fa fa-hand-o-right" aria-hidden="true"></i> Click here to
+            view monsoon blinds
+          </span>
+        </a>
+        <div class="contact2">
+          <a
+            href="https://wa.me/916379499902/?text=Can%20you%20share%20me%20more%20details%20about%20monsoon%20blinds.%20I%20am%20located%20at"
+          >
+            <i class="fa fa-whatsapp"></i> Whatsapp
+          </a>
+          <a href="tel:+91-6379499902">
+            <i class="fa fa-phone"></i> Call - 6379499902
+          </a>
+        </div>
+        <h1>Tamil Nadu</h1>
+
+        <a href="monsoonblinds-annur.html"><p>Annur</p></a>
+        <a href="monsoonblinds-Avinashi.html"><p>Avinashi</p></a>
+        <a href="monsoonblinds-Chennai.html"><p>Chennai</p></a>
+        <a href="monsoonblinds-Chidambaram.html"><p>Chidambaram</p></a>
+        <a href="monsoonblinds-Coimbatore.html"><p>Coimbatore</p></a>
+        <a href="monsoonblinds-Coonoor.html"><p>Coonoor</p></a>
+        <a href="monsoonblinds-Dharmapuri.html"><p>Dharmapuri</p></a>
+        <a href="monsoonblinds-Dindigul.html"><p>Dindigul</p></a>
+        <a href="monsoonblinds-Erode.html"><p>Erode</p></a>
+        <a href="monsoonblinds-Hosur.html"><p>Hosur</p></a>
+        <a href="monsoonblinds-Kanchipuram.html"><p>Kanchipuram</p></a>
+        <a href="monsoonblinds-Kangeyam.html"><p>Kangeyam</p></a>
+        <a href="monsoonblinds-Kanyakumari.html"><p>Kanyakumari</p></a>
+        <a href="monsoonblinds-Karur.html"><p>Karur</p></a>
+        <a href="monsoonblinds-Kodaikanal.html"><p>Kodaikanal</p></a>
+        <a href="monsoonblinds-Kotagiri.html"><p>Kotagiri</p></a>
+        <a href="monsoonblinds-Kovilpatti.html"><p>Kovilpatti</p></a>
+        <a href="monsoonblinds-Krishnagiri.html"><p>Krishnagiri</p></a>
+        <a href="monsoonblinds-Kumbakonam.html"><p>Kumbakonam</p></a>
+        <a href="monsoonblinds-Madurai.html"><p>Madurai</p></a>
+        <a href="monsoonblinds-Mahabalipuram.html"><p>Mahabalipuram</p></a>
+        <a href="monsoonblinds-Mayiladuthurai.html"><p>Mayiladuthurai</p></a>
+        <a href="monsoonblinds-Mettupalayam.html"><p>Mettupalayam</p></a>
+        <a href="monsoonblinds-Mettur.html"><p>Mettur</p></a>
+        <a href="monsoonblinds-Nagercoil.html"><p>Nagercoil</p></a>
+        <a href="monsoonblinds-Namakkal.html"><p>Namakkal</p></a>
+        <a href="monsoonblinds-Ooty.html"><p>Ooty</p></a>
+        <a href="monsoonblinds-Palani.html"><p>Palani</p></a>
+        <a href="monsoonblinds-Palladam.html"><p>Palladam</p></a>
+        <a href="monsoonblinds-Perundurai.html"><p>Perundurai</p></a>
+        <a href="monsoonblinds-Pollachi.html"><p>Pollachi</p></a>
+        <a href="monsoonblinds-Pondicherry.html"><p>Pondicherry</p></a>
+        <a href="monsoonblinds-Puducherry.html"><p>Puducherry</p></a>
+        <a href="monsoonblinds-Rasipuram.html"><p>Rasipuram</p></a>
+        <a href="monsoonblinds-Salem.html"><p>Salem</p></a>
+        <a href="monsoonblinds-Sirkali.html"><p>Sirkali</p></a>
+        <a href="monsoonblinds-Sivakasi.html"><p>Sivakasi</p></a>
+        <a href="monsoonblinds-Tenkasi.html"><p>Tenkasi</p></a>
+        <a href="monsoonblinds-Thanjavur.html"><p>Thanjavur</p></a>
+        <a href="monsoonblinds-Thoothukudi.html"><p>Thoothukudi</p></a>
+        <a href="monsoonblinds-Tiruchengode.html"><p>Tiruchengode</p></a>
+        <a href="monsoonblinds-Tirunelveli.html"><p>Tirunelveli</p></a>
+        <a href="monsoonblinds-Tirupur.html"><p>Tirupur</p></a>
+        <a href="monsoonblinds-Trichy.html"><p>Trichy</p></a>
+        <a href="monsoonblinds-Udumalpet.html"><p>Udumalpet</p></a>
+        <a href="monsoonblinds-Valparai.html"><p>Valparai</p></a>
+        <a href="monsoonblinds-Vellakoil.html"><p>Vellakoil</p></a>
+        <a href="monsoonblinds-Vellore.html"><p>Vellore</p></a>
+
+        <a href="monsoonblinds.htm">
+          <h1 class="pro-title">PVC Blinds</h1>
+          <img
+            class="img-responsive"
+            src="images\p9.jpeg"
+            alt="Monsoon Blinds"
+          />
+          <span class="click-here">
+            <i class="fa fa-hand-o-right" aria-hidden="true"></i> Click here to
+            view monsoon blinds
+          </span>
+        </a>
+        <div class="contact2">
+          <a
+            href="https://wa.me/916379499902/?text=Can%20you%20share%20me%20more%20details%20about%20monsoon%20blinds.%20I%20am%20located%20at"
+          >
+            <i class="fa fa-whatsapp"></i> Whatsapp
+          </a>
+          <a href="tel:+91-6379499902">
+            <i class="fa fa-phone"></i> Call - 6379499902
+          </a>
+        </div>
+        <h1>Uttar Pradesh</h1>
+        <a href="monsoonblinds-Kanpur.html"><p>Kanpur</p></a>
+        <a href="monsoonblinds-Lucknow.html"><p>Lucknow</p></a>
+        <a href="monsoonblinds-Ghaziabad.html"><p>Ghaziabad</p></a>
+        <a href="monsoonblinds-Agra.html"><p>Agra</p></a>
+        <a href="monsoonblinds-Meerut.html"><p>Meerut</p></a>
+        <a href="monsoonblinds-Varanasi.html"><p>Varanasi</p></a>
+        <a href="monsoonblinds-Prayagraj.html"><p>Prayagraj</p></a>
+        <a href="monsoonblinds-Bareilly.html"><p>Bareilly</p></a>
+        <a href="monsoonblinds-Aligarh.html"><p>Aligarh</p></a>
+        <a href="monsoonblinds-Moradabad.html"><p>Moradabad</p></a>
+        <a href="monsoonblinds-Saharanpur.html"><p>Saharanpur</p></a>
+        <a href="monsoonblinds-Gorakhpur.html"><p>Gorakhpur</p></a>
+        <a href="monsoonblinds-Noida.html"><p>Noida</p></a>
+        <a href="monsoonblinds-Firozabad.html"><p>Firozabad</p></a>
+        <a href="monsoonblinds-Jhansi.html"><p>Jhansi</p></a>
+        <a href="monsoonblinds-Muzaffarnagar.html"><p>Muzaffarnagar</p></a>
+        <a href="monsoonblinds-Mathura.html"><p>Mathura</p></a>
+        <a href="monsoonblinds-Ayodhya.html"><p>Ayodhya</p></a>
+        <a href="monsoonblinds-Rampur.html"><p>Rampur</p></a>
+        <a href="monsoonblinds-Shahjahanpur.html"><p>Shahjahanpur</p></a>
+        <a href="monsoonblinds-Farrukhabad.html"><p>Farrukhabad</p></a>
+        <a href="monsoonblinds-Budaun.html"><p>Budaun</p></a>
+        <a href="monsoonblinds-Maunath.html"><p>Maunath</p></a>
+        <a href="monsoonblinds-Hapur.html"><p>Hapur</p></a>
+        <a href="monsoonblinds-Etawah.html"><p>Etawah</p></a>
+        <a href="monsoonblinds-Mirzapur.html"><p>Mirzapur</p></a>
+        <a href="monsoonblinds-Bulandshahr.html"><p>Bulandshahr</p></a>
+        <a href="monsoonblinds-Sambhal.html"><p>Sambhal</p></a>
+        <a href="monsoonblinds-Amroha.html"><p>Amroha</p></a>
+        <a href="monsoonblinds-Hardoi.html"><p>Hardoi</p></a>
+        <a href="monsoonblinds-Fatehpur.html"><p>Fatehpur</p></a>
+        <a href="monsoonblinds-Raebareli.html"><p>Raebareli</p></a>
+        <a href="monsoonblinds-Orai.html"><p>Orai</p></a>
+        <a href="monsoonblinds-Sitapur.html"><p>Sitapur</p></a>
+        <a href="monsoonblinds-Bahraich.html"><p>Bahraich</p></a>
+        <a href="monsoonblinds-Modinagar.html"><p>Modinagar</p></a>
+        <a href="monsoonblinds-Unnao.html"><p>Unnao</p></a>
+        <a href="monsoonblinds-Jaunpur.html"><p>Jaunpur</p></a>
+        <a href="monsoonblinds-Lakhimpur.html"><p>Lakhimpur</p></a>
+        <a href="monsoonblinds-Hathras.html"><p>Hathras</p></a>
+        <a href="monsoonblinds-Banda.html"><p>Banda</p></a>
+        <a href="monsoonblinds-Pilibhit.html"><p>Pilibhit</p></a>
+        <a href="monsoonblinds-Barabanki.html"><p>Barabanki</p></a>
+        <a href="monsoonblinds-Khurja.html"><p>Khurja</p></a>
+        <a href="monsoonblinds-Gonda.html"><p>Gonda</p></a>
+        <a href="monsoonblinds-Mainpuri.html"><p>Mainpuri</p></a>
+        <a href="monsoonblinds-Lalitpur.html"><p>Lalitpur</p></a>
+        <a href="monsoonblinds-Etah.html"><p>Etah</p></a>
+        <a href="monsoonblinds-Deoria.html"><p>Deoria</p></a>
+        <a href="monsoonblinds-Badaun.html"><p>Badaun</p></a>
+        <a href="monsoonblinds-Ghazipur.html"><p>Ghazipur</p></a>
+        <a href="monsoonblinds-Sultanpur.html"><p>Sultanpur</p></a>
+        <a href="monsoonblinds-Azamgarh.html"><p>Azamgarh</p></a>
+        <a href="monsoonblinds-Bijnor.html"><p>Bijnor</p></a>
+        <a href="monsoonblinds-Sahaswan.html"><p>Sahaswan</p></a>
+        <a href="monsoonblinds-Basti.html"><p>Basti</p></a>
+        <a href="monsoonblinds-Chandausi.html"><p>Chandausi</p></a>
+        <a href="monsoonblinds-Akbarpur.html"><p>Akbarpur</p></a>
+        <a href="monsoonblinds-Ballia.html"><p>Ballia</p></a>
+        <a href="monsoonblinds-Tanda.html"><p>Tanda</p></a>
+        <a href="monsoonblinds-GreaterNoida.html"><p>Greater Noida</p></a>
+        <a href="monsoonblinds-Shikohabad.html"><p>Shikohabad</p></a>
+        <a href="monsoonblinds-Shamli.html"><p>Shamli</p></a>
+        <a href="monsoonblinds-Awagarh.html"><p>Awagarh</p></a>
+        <a href="monsoonblinds-Kasganj.html"><p>Kasganj</p></a>
+
+        <a href="monsoonblinds.htm">
+          <h1 class="pro-title">PVC Blinds</h1>
+          <img
+            class="img-responsive"
+            src="images\p9.jpeg"
+            alt="Monsoon Blinds"
+          />
+          <span class="click-here">
+            <i class="fa fa-hand-o-right" aria-hidden="true"></i> Click here to
+            view monsoon blinds
+          </span>
+        </a>
+        <div class="contact2">
+          <a
+            href="https://wa.me/916379499902/?text=Can%20you%20share%20me%20more%20details%20about%20monsoon%20blinds.%20I%20am%20located%20at"
+          >
+            <i class="fa fa-whatsapp"></i> Whatsapp
+          </a>
+          <a href="tel:+91-6379499902">
+            <i class="fa fa-phone"></i> Call - 6379499902
+          </a>
+        </div>
+        <h1>KARNATAKA</h1>
+        <a href="monsoonblinds-Ballari.html"><p>Ballari</p></a>
+        <a href="monsoonblinds-Belagavi.html"><p>Belagavi</p></a>
+        <a href="monsoonblinds-Bidar.html"><p>Bidar</p></a>
+        <a href="monsoonblinds-Channapatna.html"><p>Channapatna</p></a>
+        <a href="monsoonblinds-Chitradurga.html"><p>Chitradurga</p></a>
+        <a href="monsoonblinds-Coorg.html"><p>Coorg</p></a>
+        <a href="monsoonblinds-Davanagere.html"><p>Davanagere</p></a>
+        <a href="monsoonblinds-Dharwad.html"><p>Dharwad</p></a>
+        <a href="monsoonblinds-Gokarna.html"><p>Gokarna</p></a>
+        <a href="monsoonblinds-Hampi.html"><p>Hampi</p></a>
+        <a href="monsoonblinds-Hassan.html"><p>Hassan</p></a>
+        <a href="monsoonblinds-Hubballi.html"><p>Hubballi</p></a>
+        <a href="monsoonblinds-Hubli.html"><p>Hubli</p></a>
+        <a href="monsoonblinds-Madikeri.html"><p>Madikeri</p></a>
+        <a href="monsoonblinds-Mandya.html"><p>Mandya</p></a>
+        <a href="monsoonblinds-Mangaluru.html"><p>Mangaluru</p></a>
+        <a href="monsoonblinds-Mysuru.html"><p>Mysuru</p></a>
+        <a href="monsoonblinds-Raichur.html"><p>Raichur</p></a>
+        <a href="monsoonblinds-Ramanagara.html"><p>Ramanagara</p></a>
+        <a href="monsoonblinds-Shivamogga.html"><p>Shivamogga</p></a>
+        <a href="monsoonblinds-Srirangapatna.html"><p>Srirangapatna</p></a>
+        <a href="monsoonblinds-Tumakuru.html"><p>Tumakuru</p></a>
+        <a href="monsoonblinds-Tumkur.html"><p>Tumkur</p></a>
+        <a href="monsoonblinds-Udupi.html"><p>Udupi</p></a>
+        <a href="monsoonblinds-Vijayapura.html"><p>Vijayapura</p></a>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="section">
+        <a href="monsoonblinds.htm">
+          <h1 class="pro-title">Bamboo Blinds</h1>
+          <img
+            class="img-responsive"
+            src="images\p8.jpeg"
+            alt="Monsoon Blinds"
+          />
+          <span class="click-here">
+            <i class="fa fa-hand-o-right" aria-hidden="true"></i> Click here to
+            view monsoon blinds
+          </span>
+        </a>
+        <div class="contact2">
+          <a
+            href="https://wa.me/916379499902/?text=Can%20you%20share%20me%20more%20details%20about%20monsoon%20blinds.%20I%20am%20located%20at"
+          >
+            <i class="fa fa-whatsapp"></i> Whatsapp
+          </a>
+          <a href="tel:+91-6379499902">
+            <i class="fa fa-phone"></i> Call - 6379499902
+          </a>
+        </div>
+        <h1>Andhra Pradesh</h1>
+        <br />
+
+        <a href="monsoonblinds-adoni.html">Adoni</a><br />
+        <a href="monsoonblinds-anantapuram.html">Anantapuram</a><br />
+        <a href="monsoonblinds-bhimavaram.html">Bhimavaram</a><br />
+        <a href="monsoonblinds-chilakaluripet.html">Chilakaluripet</a><br />
+        <a href="monsoonblinds-chittoor.html">Chittoor</a><br />
+        <a href="monsoonblinds-dharmavaram.html">Dharmavaram</a><br />
+        <a href="monsoonblinds-eluru.html">Eluru</a><br />
+        <a href="monsoonblinds-gudivada.html">Gudivada</a><br />
+        <a href="monsoonblinds-guntakal.html">Guntakal</a><br />
+        <a href="monsoonblinds-guntur.html">Guntur</a><br />
+        <a href="monsoonblinds-hindapur.html">Hindapur</a><br />
+        <a href="monsoonblinds-kadapa.html">Kadapa</a><br />
+        <a href="monsoonblinds-kadiri.html">Kadiri</a><br />
+        <a href="monsoonblinds-kakinada.html">Kakinada</a><br />
+        <a href="monsoonblinds-kurnool.html">Kurnool</a><br />
+        <a href="monsoonblinds-machilipatnam.html">Machilipatnam</a><br />
+        <a href="monsoonblinds-madanapalle.html">Madanapalle</a><br />
+        <a href="monsoonblinds-mangalagiri.html">Mangalagiri</a><br />
+        <a href="monsoonblinds-nandyal.html">Nandyal</a><br />
+        <a href="monsoonblinds-narasaraopet.html">Narasaraopet</a><br />
+        <a href="monsoonblinds-nellore.html">Nellore</a><br />
+        <a href="monsoonblinds-ongole.html">Ongole</a><br />
+        <a href="monsoonblinds-proddatur.html">Proddatur</a><br />
+        <a href="monsoonblinds-rajahmundry.html">Rajahmundry</a><br />
+        <a href="monsoonblinds-srikakulam.html">Srikakulam</a><br />
+        <a href="monsoonblinds-tadepalligudem.html">Tadepalligudem</a><br />
+        <a href="monsoonblinds-tadipatri.html">Tadipatri</a><br />
+        <a href="monsoonblinds-tenali.html">Tenali</a><br />
+        <a href="monsoonblinds-tirupati.html">Tirupati</a><br />
+        <a href="monsoonblinds-vijayawada.html">Vijayawada</a><br />
+        <a href="monsoonblinds-visakhapatnam.html">Visakhapatnam</a><br />
+        <a href="monsoonblinds-vizianagaram.html">Vizianagaram</a><br />
+
+        <a href="monsoonblinds.htm">
+          <h1 class="pro-title">Bamboo Blinds</h1>
+          <img
+            class="img-responsive"
+            src="images\p8.jpeg"
+            alt="Monsoon Blinds"
+          />
+          <span class="click-here">
+            <i class="fa fa-hand-o-right" aria-hidden="true"></i> Click here to
+            view monsoon blinds
+          </span>
+        </a>
+        <div class="contact2">
+          <a
+            href="https://wa.me/916379499902/?text=Can%20you%20share%20me%20more%20details%20about%20monsoon%20blinds.%20I%20am%20located%20at"
+          >
+            <i class="fa fa-whatsapp"></i> Whatsapp
+          </a>
+          <a href="tel:+91-6379499902">
+            <i class="fa fa-phone"></i> Call - 6379499902
+          </a>
+        </div>
+
+        <h1>Uttarakhand</h1>
+        <a href="monsoonblinds-Dehradun.html"><p>Dehradun</p></a>
+        <a href="monsoonblinds-Haridwar.html"><p>Haridwar</p></a>
+        <a href="monsoonblinds-Roorkee.html"><p>Roorkee</p></a>
+        <a href="monsoonblinds-Haldwani.html"><p>Haldwani</p></a>
+        <a href="monsoonblinds-Rudrapur.html"><p>Rudrapur</p></a>
+        <a href="monsoonblinds-Kashipur.html"><p>Kashipur</p></a>
+        <a href="monsoonblinds-Rishikesh.html"><p>Rishikesh</p></a>
+
+        <h1>Punjab</h1>
+        <a href="monsoonblinds-Amritsar.html"><p>Amritsar</p></a>
+        <a href="monsoonblinds-Barnala.html"><p>Barnala</p></a>
+        <a href="monsoonblinds-Bathinda.html"><p>Bathinda</p></a>
+        <a href="monsoonblinds-Faridkot.html"><p>Faridkot</p></a>
+        <a href="monsoonblinds-Fatehgarh.html"><p>Fatehgarh</p></a>
+        <a href="monsoonblinds-Firozpur.html"><p>Firozpur</p></a>
+        <a href="monsoonblinds-Fazilka.html"><p>Fazilka</p></a>
+        <a href="monsoonblinds-Gurdaspur.html"><p>Gurdaspur</p></a>
+        <a href="monsoonblinds-Hoshiarpur.html"><p>Hoshiarpur</p></a>
+        <a href="monsoonblinds-Jalandhar.html"><p>Jalandhar</p></a>
+        <a href="monsoonblinds-Kapurthala.html"><p>Kapurthala</p></a>
+        <a href="monsoonblinds-Ludhiana.html"><p>Ludhiana</p></a>
+        <a href="monsoonblinds-Malerkotla.html"><p>Malerkotla</p></a>
+        <a href="monsoonblinds-Mansa.html"><p>Mansa</p></a>
+        <a href="monsoonblinds-Moga.html"><p>Moga</p></a>
+        <a href="monsoonblinds-Muktsar.html"><p>Muktsar</p></a>
+        <a href="monsoonblinds-Pathankot.html"><p>Pathankot</p></a>
+        <a href="monsoonblinds-Patiala.html"><p>Patiala</p></a>
+        <a href="monsoonblinds-Rupnagar.html"><p>Rupnagar</p></a>
+        <a href="monsoonblinds-Sahibzada.html"><p>Sahibzada</p></a>
+        <a href="monsoonblinds-Sangrur.html"><p>Sangrur</p></a>
+        <a href="monsoonblinds-Shaheed.html"><p>Shaheed</p></a>
+        <a href="monsoonblinds-Tarn.html"><p>Tarn</p></a>
+
+        <a href="monsoonblinds.htm">
+          <h1 class="pro-title">Bamboo Blinds</h1>
+          <img
+            class="img-responsive"
+            src="images\p8.jpeg"
+            alt="Monsoon Blinds"
+          />
+          <span class="click-here">
+            <i class="fa fa-hand-o-right" aria-hidden="true"></i> Click here to
+            view monsoon blinds
+          </span>
+        </a>
+        <div class="contact2">
+          <a
+            href="https://wa.me/916379499902/?text=Can%20you%20share%20me%20more%20details%20about%20monsoon%20blinds.%20I%20am%20located%20at"
+          >
+            <i class="fa fa-whatsapp"></i> Whatsapp
+          </a>
+          <a href="tel:+91-6379499902">
+            <i class="fa fa-phone"></i> Call - 6379499902
+          </a>
+        </div>
+        <h1>Himachal Pradesh</h1>
+        <a href="monsoonblinds-Bilaspur.html"><p>Bilaspur</p></a>
+        <a href="monsoonblinds-Chamba.html"><p>Chamba</p></a>
+        <a href="monsoonblinds-Hamirpur.html"><p>Hamirpur</p></a>
+        <a href="monsoonblinds-Kangra.html"><p>Kangra</p></a>
+        <a href="monsoonblinds-Kinnaur.html"><p>Kinnaur</p></a>
+        <a href="monsoonblinds-Kullu.html"><p>Kullu</p></a>
+        <a href="monsoonblinds-Lahaul.html"><p>Lahaul</p></a>
+        <a href="monsoonblinds-Mandi.html"><p>Mandi</p></a>
+        <a href="monsoonblinds-Shimla.html"><p>Shimla</p></a>
+        <a href="monsoonblinds-Sirmaur.html"><p>Sirmaur</p></a>
+        <a href="monsoonblinds-Solan.html"><p>Solan</p></a>
+        <a href="monsoonblinds-Una.html"><p>Una</p></a>
+
+        <h1>Jharkhand</h1>
+        <a href="monsoonblinds-Bokaro.html"><p>Bokaro</p></a>
+        <a href="monsoonblinds-Chikunda.html"><p>Chikunda</p></a>
+        <a href="monsoonblinds-Deoghar.html"><p>Deoghar</p></a>
+        <a href="monsoonblinds-Dhanbad.html"><p>Dhanbad</p></a>
+        <a href="monsoonblinds-Giridih.html"><p>Giridih</p></a>
+        <a href="monsoonblinds-Hazaribagh.html"><p>Hazaribagh</p></a>
+        <a href="monsoonblinds-Jamshedpur.html"><p>Jamshedpur</p></a>
+        <a href="monsoonblinds-Medininagar.html"><p>Medininagar</p></a>
+        <a href="monsoonblinds-Phusro.html"><p>Phusro</p></a>
+        <a href="monsoonblinds-Ramgarh.html"><p>Ramgarh</p></a>
+        <a href="monsoonblinds-Ranchi.html"><p>Ranchi</p></a>
+
+        <h1>Maharashtra</h1>
+        <a href="monsoonblinds-Achalpur.html"><p>Achalpur</p></a>
+        <a href="monsoonblinds-Ahmednagar.html"><p>Ahmednagar</p></a>
+        <a href="monsoonblinds-Akola.html"><p>Akola</p></a>
+        <a href="monsoonblinds-Ambarnath.html"><p>Ambarnath</p></a>
+        <a href="monsoonblinds-Amravati.html"><p>Amravati</p></a>
+        <a href="monsoonblinds-Aurangabad.html"><p>Aurangabad</p></a>
+        <a href="monsoonblinds-Badlapur.html"><p>Badlapur</p></a>
+        <a href="monsoonblinds-Barshi.html"><p>Barshi</p></a>
+        <a href="monsoonblinds-Beed.html"><p>Beed</p></a>
+        <a href="monsoonblinds-Bhiwandi.html"><p>Bhiwandi</p></a>
+        <a href="monsoonblinds-Bhusawal.html"><p>Bhusawal</p></a>
+        <a href="monsoonblinds-Chandrapur.html"><p>Chandrapur</p></a>
+        <a href="monsoonblinds-Dharashiv.html"><p>Dharashiv</p></a>
+        <a href="monsoonblinds-Dhule.html"><p>Dhule</p></a>
+        <a href="monsoonblinds-Gondia.html"><p>Gondia</p></a>
+        <a href="monsoonblinds-Hinganghat.html"><p>Hinganghat</p></a>
+        <a href="monsoonblinds-Ichalkaranji.html"><p>Ichalkaranji</p></a>
+        <a href="monsoonblinds-Jalgaon.html"><p>Jalgaon</p></a>
+        <a href="monsoonblinds-Jalna.html"><p>Jalna</p></a>
+        <a href="monsoonblinds-Kalyan.html"><p>Kalyan</p></a>
+        <a href="monsoonblinds-Kolhapur.html"><p>Kolhapur</p></a>
+        <a href="monsoonblinds-Latur.html"><p>Latur</p></a>
+        <a href="monsoonblinds-Malegaon.html"><p>Malegaon</p></a>
+        <a href="monsoonblinds-Mira.html"><p>Mira</p></a>
+        <a href="monsoonblinds-Mumbai.html"><p>Mumbai</p></a>
+        <a href="monsoonblinds-Nagpur.html"><p>Nagpur</p></a>
+        <a href="monsoonblinds-Nanded.html"><p>Nanded</p></a>
+        <a href="monsoonblinds-Nandurbar.html"><p>Nandurbar</p></a>
+        <a href="monsoonblinds-Nashik.html"><p>Nashik</p></a>
+        <a href="monsoonblinds-Navimumbai.html"><p>Navimumbai</p></a>
+        <a href="monsoonblinds-Panvel.html"><p>Panvel</p></a>
+        <a href="monsoonblinds-Parbhani.html"><p>Parbhani</p></a>
+        <a href="monsoonblinds-Pimpri.html"><p>Pimpri</p></a>
+        <a href="monsoonblinds-Pune.html"><p>Pune</p></a>
+        <a href="monsoonblinds-Sangli.html"><p>Sangli</p></a>
+        <a href="monsoonblinds-Satara.html"><p>Satara</p></a>
+        <a href="monsoonblinds-Solapur.html"><p>Solapur</p></a>
+        <a href="monsoonblinds-Thane.html"><p>Thane</p></a>
+        <a href="monsoonblinds-Udgir.html"><p>Udgir</p></a>
+        <a href="monsoonblinds-Ulhasnagar.html"><p>Ulhasnagar</p></a>
+        <a href="monsoonblinds-Vasai.html"><p>Vasai</p></a>
+        <a href="monsoonblinds-Wardha.html"><p>Wardha</p></a>
+        <a href="monsoonblinds-Yavatmal.html"><p>Yavatmal</p></a>
+
+        <h1>Union Territory</h1><br>
+
+        <a href="monsoonblinds-andaman.html">Andaman</a><br />
+        <a href="monsoonblinds-delhi.html">New Delhi</a><br />
+        <a href="monsoonblinds-daman.html">Daman</a><br />
+        <a href="monsoonblinds-lakshadweep.html">Lakshadweep</a><br />
+        <a href="monsoonblinds-jammu.html">Jammu</a><br />
+        <a href="monsoonblinds-ladakh.html">Ladakh</a><br />
+        <a href="monsoonblinds-chandigarh.html">Chandigarh</a><br />
+      </div>
+
+      <!-- Column 3 -->
+      <div class="section">
+        <a href="monsoonblinds.htm">
+          <h1 class="pro-title">Monsoon Blinds</h1>
+          <img
+            class="img-responsive"
+            src="images\p6.jpeg"
+            alt="Monsoon Blinds"
+          />
+          <span class="click-here">
+            <i class="fa fa-hand-o-right" aria-hidden="true"></i> Click here to
+            view monsoon blinds
+          </span>
+        </a>
+        <div class="contact2">
+          <a
+            href="https://wa.me/916379499902/?text=Can%20you%20share%20me%20more%20details%20about%20monsoon%20blinds.%20I%20am%20located%20at"
+          >
+            <i class="fa fa-whatsapp"></i> Whatsapp
+          </a>
+          <a href="tel:+91-6379499902">
+            <i class="fa fa-phone"></i> Call - 6379499902
+          </a>
+        </div>
+        <h1>Gujarat</h1>
+        <a href="monsoonblinds-ahmedabad.html"><p>Ahmedabad</p></a>
+        <a href="monsoonblinds-surat.html"><p>Surat</p></a>
+        <a href="monsoonblinds-vadodara.html"><p>Vadodara</p></a>
+        <a href="monsoonblinds-rajkot.html"><p>Rajkot</p></a>
+        <a href="monsoonblinds-bhavnagar.html"><p>Bhavnagar</p></a>
+        <a href="monsoonblinds-jamnagar.html"><p>Jamnagar</p></a>
+        <a href="monsoonblinds-gandhinagar.html"><p>Gandhinagar</p></a>
+        <a href="monsoonblinds-junagadh.html"><p>Junagadh</p></a>
+        <a href="monsoonblinds-gandhidham.html"><p>Gandhidham</p></a>
+        <a href="monsoonblinds-anand.html"><p>Anand</p></a>
+        <a href="monsoonblinds-navsari.html"><p>Navsari</p></a>
+        <a href="monsoonblinds-morbi.html"><p>Morbi</p></a>
+        <a href="monsoonblinds-nadiad.html"><p>Nadiad</p></a>
+        <a href="monsoonblinds-surendranagar.html"><p>Surendranagar</p></a>
+        <a href="monsoonblinds-bharuch.html"><p>Bharuch</p></a>
+        <a href="monsoonblinds-mehsana.html"><p>Mehsana</p></a>
+        <a href="monsoonblinds-bhuj.html"><p>Bhuj</p></a>
+        <a href="monsoonblinds-porbandar.html"><p>Porbandar</p></a>
+        <a href="monsoonblinds-palanpur.html"><p>Palanpur</p></a>
+        <a href="monsoonblinds-valsad.html"><p>Valsad</p></a>
+        <a href="monsoonblinds-vapi.html"><p>Vapi</p></a>
+        <a href="monsoonblinds-gondal.html"><p>Gondal</p></a>
+        <a href="monsoonblinds-veraval.html"><p>Veraval</p></a>
+        <a href="monsoonblinds-godhra.html"><p>Godhra</p></a>
+        <a href="monsoonblinds-patan.html"><p>Patan</p></a>
+        <a href="monsoonblinds-kalol.html"><p>Kalol</p></a>
+        <a href="monsoonblinds-dahod.html"><p>Dahod</p></a>
+        <a href="monsoonblinds-botad.html"><p>Botad</p></a>
+        <a href="monsoonblinds-amreli.html"><p>Amreli</p></a>
+        <a href="monsoonblinds-deesa.html"><p>Deesa</p></a>
+        <a href="monsoonblinds-jetpur.html"><p>Jetpur</p></a>
+
+        <a href="monsoonblinds.htm">
+          <h1 class="pro-title">PVC Blinds</h1>
+          <img
+            class="img-responsive"
+            src="images\p9.jpeg"
+            alt="Monsoon Blinds"
+          />
+          <span class="click-here">
+            <i class="fa fa-hand-o-right" aria-hidden="true"></i> Click here to
+            view monsoon blinds
+          </span>
+        </a>
+        <div class="contact2">
+          <a
+            href="https://wa.me/916379499902/?text=Can%20you%20share%20me%20more%20details%20about%20monsoon%20blinds.%20I%20am%20located%20at"
+          >
+            <i class="fa fa-whatsapp"></i> Whatsapp
+          </a>
+          <a href="tel:+91-6379499902">
+            <i class="fa fa-phone"></i> Call - 6379499902
+          </a>
+        </div>
+        <h1>Bihar</h1>
+        <a href="monsoonblinds-Bettiah.html"> <p>Bettiah</p></a>
+        <a href="monsoonblinds-Bhagalpur.html"> <p>Bhagalpur</p></a>
+        <a href="monsoonblinds-Buxar.html"> <p>Buxar</p></a>
+        <a href="monsoonblinds-Chhapra.html"> <p>Chhapra</p></a>
+        <a href="monsoonblinds-Danapur.html"> <p>Danapur</p></a>
+        <a href="monsoonblinds-Darbhanga.html"> <p>Darbhanga</p></a>
+        <a href="monsoonblinds-Gaya.html"> <p>Gaya</p></a>
+        <a href="monsoonblinds-Katihar.html"> <p>Katihar</p></a>
+        <a href="monsoonblinds-Motihari.html"> <p>Motihari</p></a>
+        <a href="monsoonblinds-Muzaffarpur.html"> <p>Muzaffarpur</p></a>
+        <a href="monsoonblinds-Patna.html"> <p>Patna</p></a>
+        <a href="monsoonblinds-Purnia.html"> <p>Purnia</p></a>
+
+        <h1>Chhattisgarh</h1>
+        <a href="monsoonblinds-ambikapur.html"> <p>Ambikapur</p></a>
+        <a href="monsoonblinds-bhilai-durg.html"> <p>Bhilai Durg</p></a>
+        <a href="monsoonblinds-bilaspur.html"> <p>Bilaspur</p></a>
+        <a href="monsoonblinds-chirmiri.html"> <p>Chirmiri</p></a>
+        <a href="monsoonblinds-dhamtari.html"> <p>Dhamtari</p></a>
+        <a href="monsoonblinds-jagdalpur.html"> <p>Jagdalpur</p></a>
+        <a href="monsoonblinds-korba.html"> <p>Korba</p></a>
+        <a href="monsoonblinds-mahasamund.html"> <p>Mahasamund</p></a>
+        <a href="monsoonblinds-raigarh.html"> <p>Raigarh</p></a>
+        <a href="monsoonblinds-raipur.html"> <p>Raipur</p></a>
+        <a href="monsoonblinds-rajnandgaon.html"> <p>Rajnandgaon</p></a>
+
+        <h1>GOA</h1>
+        <a href="monsoonblinds-bicholim.html"> <p>Bicholim</p></a>
+        <a href="monsoonblinds-canacona.html"> <p>Canacona</p></a>
+        <a href="monsoonblinds-cuncolim.html"> <p>Cuncolim</p></a>
+        <a href="monsoonblinds-curchorem.html"> <p>Curchorem</p></a>
+        <a href="monsoonblinds-goa.html"> <p>Goa</p></a>
+        <a href="monsoonblinds-mapusa.html"> <p>Mapusa</p></a>
+        <a href="monsoonblinds-margao.html"> <p>Margao</p></a>
+        <a href="monsoonblinds-mormugao.html"> <p>Mormugao</p></a>
+        <a href="monsoonblinds-panaji.html"> <p>Panaji</p></a>
+        <a href="monsoonblinds-pernem.html"> <p>Pernem</p></a>
+        <a href="monsoonblinds-ponda.html"> <p>Ponda</p></a>
+        <a href="monsoonblinds-quepem.html"> <p>Quepem</p></a>
+        <a href="monsoonblinds-sanguem.html"> <p>Sanguem</p></a>
+        <a href="monsoonblinds-sanquelim.html"> <p>Sanquelim</p></a>
+        <a href="monsoonblinds-valpoi.html"> <p>Valpoi</p></a>
+
+        <a href="monsoonblinds.htm">
+          <h1 class="pro-title">Monsoon Blinds</h1>
+          <img
+            class="img-responsive"
+            src="images\p6.jpeg"
+            alt="Monsoon Blinds"
+          />
+          <span class="click-here">
+            <i class="fa fa-hand-o-right" aria-hidden="true"></i> Click here to
+            view monsoon blinds
+          </span>
+        </a>
+        <div class="contact2">
+          <a
+            href="https://wa.me/916379499902/?text=Can%20you%20share%20me%20more%20details%20about%20monsoon%20blinds.%20I%20am%20located%20at"
+          >
+            <i class="fa fa-whatsapp"></i> Whatsapp
+          </a>
+          <a href="tel:+91-6379499902">
+            <i class="fa fa-phone"></i> Call - 6379499902
+          </a>
+        </div>
+        <h1>North East India</h1>
+        <a href="monsoonblinds-Agartala.html"><p>Agartala</p></a>
+        <a href="monsoonblinds-Arunachal.html"><p>Arunachal</p></a>
+        <a href="monsoonblinds-Assam.html"><p>Assam</p></a>
+        <a href="monsoonblinds-Dibrugarh.html"><p>Dibrugarh</p></a>
+        <a href="monsoonblinds-Dimapur.html"><p>Dimapur</p></a>
+        <a href="monsoonblinds-Guwahati.html"><p>Guwahati</p></a>
+        <a href="monsoonblinds-Imphal.html"><p>Imphal</p></a>
+        <a href="monsoonblinds-Jorhat.html"><p>Jorhat</p></a>
+        <a href="monsoonblinds-Kohima.html"><p>Kohima</p></a>
+        <a href="monsoonblinds-Manipur.html"><p>Manipur</p></a>
+        <a href="monsoonblinds-Meghalaya.html"><p>Meghalaya</p></a>
+        <a href="monsoonblinds-Mizoram.html"><p>Mizoram</p></a>
+        <a href="monsoonblinds-Nagaland.html"><p>Nagaland</p></a>
+        <a href="monsoonblinds-Shillong.html"><p>Shillong</p></a>
+        <a href="monsoonblinds-Silchar.html"><p>Silchar</p></a>
+        <a href="monsoonblinds-Tinsukia.html"><p>Tinsukia</p></a>
+        <a href="monsoonblinds-Tripura.html"><p>Tripura</p></a>
+
+        <h1>Odisha</h1>
+        <a href="monsoonblinds-Balasore.html"><p>Balasore</p></a>
+        <a href="monsoonblinds-Baripada.html"><p>Baripada</p></a>
+        <a href="monsoonblinds-Berhampur.html"><p>Berhampur</p></a>
+        <a href="monsoonblinds-Bhadrak.html"><p>Bhadrak</p></a>
+        <a href="monsoonblinds-Bhubaneswar.html"><p>Bhubaneswar</p></a>
+        <a href="monsoonblinds-Cuttack.html"><p>Cuttack</p></a>
+        <a href="monsoonblinds-Puri.html"><p>Puri</p></a>
+        <a href="monsoonblinds-Rourkela.html"><p>Rourkela</p></a>
+        <a href="monsoonblinds-Sambalpur.html"><p>Sambalpur</p></a>
+
+        <h1>Madhya Pradesh</h1>
+        <br />
+        <a href="monsoonblinds-betul.html">Betul</a><br />
+        <a href="monsoonblinds-bhind.html">Bhind</a><br />
+        <a href="monsoonblinds-bhopal.html">Bhopal</a><br />
+        <a href="monsoonblinds-burhanpur.html">Burhanpur</a><br />
+        <a href="monsoonblinds-chambal.html">Chambal</a><br />
+        <a href="monsoonblinds-chhatarpur.html">Chhatarpur</a><br />
+        <a href="monsoonblinds-chhindwara.html">Chhindwara</a><br />
+        <a href="monsoonblinds-damoh.html">Damoh</a><br />
+        <a href="monsoonblinds-datia.html">Datia</a><br />
+        <a href="monsoonblinds-dewas.html">Dewas</a><br />
+        <a href="monsoonblinds-dindori.html">Dindori</a><br />
+        <a href="monsoonblinds-guna.html">Guna</a><br />
+        <a href="monsoonblinds-gwalior.html">Gwalior</a><br />
+        <a href="monsoonblinds-indore.html">Indore</a><br />
+        <a href="monsoonblinds-itarsi.html">Itarsi</a><br />
+        <a href="monsoonblinds-jabalpur.html">Jabalpur</a><br />
+        <a href="monsoonblinds-katni.html">Katni</a><br />
+        <a href="monsoonblinds-khandwa.html">Khandwa</a><br />
+        <a href="monsoonblinds-khargone.html">Khargone</a><br />
+        <a href="monsoonblinds-mandsaur.html">Mandsaur</a><br />
+        <a href="monsoonblinds-nagda.html">Nagda</a><br />
+        <a href="monsoonblinds-narmadapuram.html">Narmadapuram</a><br />
+        <a href="monsoonblinds-neemuch.html">Neemuch</a><br />
+        <a href="monsoonblinds-pithampur.html">Pithampur</a><br />
+        <a href="monsoonblinds-ratlam.html">Ratlam</a><br />
+        <a href="monsoonblinds-rewa.html">Rewa</a><br />
+        <a href="monsoonblinds-sagar.html">Sagar</a><br />
+        <a href="monsoonblinds-sahore.html">Sahore</a><br />
+        <a href="monsoonblinds-satna.html">Satna</a><br />
+        <a href="monsoonblinds-seoni.html">Seoni</a><br />
+        <a href="monsoonblinds-shivpuri.html">Shivpuri</a><br />
+        <a href="monsoonblinds-singrauli.html">Singrauli</a><br />
+        <a href="monsoonblinds-ujjain.html">Ujjain</a><br />
+        <a href="monsoonblinds-vidisha.html">Vidisha</a><br />
+      </div>
+    </div>
+
+    <!-- Javascript files-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <script src="js/plugin.js"></script>
+    <!-- sidebar -->
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/custom.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript for Filtering -->
+    <script>
+      document
+        .getElementById("popularBtn")
+        .addEventListener("click", function () {
+          filterCities("popular");
+        });
+
+      document
+        .getElementById("allCitiesBtn")
+        .addEventListener("click", function () {
+          filterCities("all");
+        });
+
+      function filterCities(category) {
+        let cities = document.querySelectorAll(".city-card");
+        cities.forEach((city) => {
+          if (
+            category === "all" ||
+            city.getAttribute("data-category") === category
+          ) {
+            city.style.display = "block";
+          } else {
+            city.style.display = "none";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
