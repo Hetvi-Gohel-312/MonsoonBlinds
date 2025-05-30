@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Products - Monsoon Blinds</title>
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!-- Responsive-->
+    <link rel="stylesheet" href="css/responsive.css" />
+    <!-- fevicon -->
+    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <!-- font css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css" />
+    <!-- Tweaks for older IEs-->
+    <link
+      rel="stylesheet"
+      href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
+    />
+    <style>
+        /* General Styles */
+        body {
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("images/banner-bg.png"),
+          url("images/client-bg.png");
+        background-position: top, center 70%;
+        background-repeat: no-repeat, no-repeat;
+        background-size: 100% auto, 100% auto;
+        }
+         /* Navbar */
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: black;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: color 0.3s, background 0.3s;
+}
+
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #ffffff;
+    background-color: #d78373;
+    border-radius: 10px;
+}
+
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show>.nav-link {
+    color: blue;
+}
+
+.navbar-brand {
+    margin: 0px;
+    float: right;
+}
+
+.navbar {
+    .navbar {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.9);
+        transition: all 0.3s;
+     }
+     
+}
+        
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 1px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #d78373;
+            margin-bottom: 20px;
+        }
+
+        h1::after {
+            content: "";
+            width: 80px;
+            height: 4px;
+            background: #d78373;
+            display: block;
+            margin: 8px auto;
+            border-radius: 2px;
+        }
+/* Section Title */
+.section-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Product Card */
+.product-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Product Image */
+.product-image {
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images maintain aspect ratio and cover the area */
+    border-radius: 8px;
+}
+
+/* Product Info */
+.product-card h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+/* Read More Button */
+.btn-readmore {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #d78373, #b3554e);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-readmore:hover {
+    background: linear-gradient(to right, #c76b63, #a8433d);
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+        
+        /*Fixed Contact*/
+/* Vertical Contact Bar */
+.vertical-contact-bar {
+    position: fixed;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 999;
+  }
+  
+  /* Common Icon Styles */
+  .vertical-contact-bar a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Different Colors */
+  .vertical-contact-bar .whatsapp {
+    background: #25D366;
+  }
+  .vertical-contact-bar .phone {
+    background: #007BFF;
+  }
+  .vertical-contact-bar .email {
+    background: #FF5733;
+  }
+  
+  /* Hover Effect */
+  .vertical-contact-bar a:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+  }
+  
+  /* Responsive for Mobile */
+  @media (max-width: 768px) {
+    .vertical-contact-bar {
+      left: 5px;
+      gap: 10px;
+    }
+    .vertical-contact-bar a {
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+    }
+  }
+
+  
+    </style>
+</head>
+<body>
+<!-- Navbar -->
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <h1 style="font-size: clamp(18px, 8vw, 36px) ; color: black"><b> Bao Blinds </b></h1>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+  
+                <li class="nav-item">
+                    <a class="nav-link active" href="products.html">Product</a>
+                </li>
+  
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="all-cities.html">All Cities</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+  </div>
+   <!-- Product Section -->
+<div class="container">
+    <h1 class="section-title">Our Products</h1>
+
+    <div class="product-grid">
+        <!-- Monsoon Blind -->
+        <div class="product-card">
+            <a href="monsoonblinds.html">
+                <div class="product-image">
+                    <img src="images\fabric1.jpg" alt="Monsoon Blind">
+                </div>
+            </a>
+            <div class="product-info">
+                <h3>Monsoon Blind</h3>
+                <p>Weather-resistant blinds for ultimate outdoor protection.</p>
+                <a href="monsoonblinds.html" class="btn-readmore">Read More →</a>
+            </div>
+        </div>
+        <!-- Aluminium Venetian Blind -->
+        <div class="product-card">
+            <a href="aluminiumvenetian.html">
+                <div class="product-image">
+                    <img src="images/al1.jpg" alt="Aluminium Venetian Blind">
+                </div>
+            </a>
+            <div class="product-info">
+                <h3>Aluminium Venetian Blind</h3>
+                <p>Durable and stylish blinds perfect for modern spaces.</p>
+                <a href="aluminiumvenetian.html" class="btn-readmore">Read More →</a>
+            </div>
+        </div>
+
+        <!-- Bamboo Blind -->
+        <div class="product-card">
+            <a href="bambooblinds.html">
+                <div class="product-image">
+                    <img src="images/b (10).jpg" alt="Bamboo Blind">
+                </div>
+            </a>
+            <div class="product-info">
+                <h3>Bamboo Blind</h3>
+                <p>Eco-friendly and elegant blinds for natural aesthetics.</p>
+                <a href="bambooblinds.html" class="btn-readmore">Read More →</a>
+            </div>
+        </div>
+        <!-- Clear Blind -->
+        <div class="product-card">
+            <a href="clearblinds.html">
+                <div class="product-image">
+                    <img src="images/c5.jpg" alt="Clear Blind">
+                </div>
+            </a>
+            <div class="product-info">
+                <h3>Clear Blind</h3>
+                <p>Transparent blinds for an unobstructed outdoor view.</p>
+                <a href="honeycombblinds.html" class="btn-readmore">Read More →</a>
+            </div>
+        </div>
+
+        <!-- Honeycomb Blind -->
+        <div class="product-card">
+            <a href="honeycombblinds.html">
+                <div class="product-image">
+                    <img src="images/h5.jpg" alt="Honeycomb Blind">
+                </div>
+            </a>
+            <div class="product-info">
+                <h3>Honeycomb Blind</h3>
+                <p>Energy-efficient blinds with unique hexagonal cells.</p>
+                <a href="honeycombblinds.html" class="btn-readmore">Read More →</a>
+            </div>
+        </div>
+
+        <!-- Motorized Blind -->
+        <div class="product-card">
+            <a href="motorizedblinds.html">
+                <div class="product-image">
+                    <img src="images/mo5.jpg" alt="Motorized Blind">
+                </div>
+            </a>
+            <div class="product-info">
+                <h3>Motorized Blind</h3>
+                <p>Smart and remote-controlled blinds for convenience.</p>
+                <a href="motorizedblinds.html" class="btn-readmore">Read More →</a>
+            </div>
+        </div>
+
+        <!-- Roller Blind -->
+        <div class="product-card">
+            <a href="rollerblinds.html">
+                <div class="product-image">
+                    <img src="images/r14.jpg" alt="Roller Blind">
+                </div>
+            </a>
+            <div class="product-info">
+                <h3>Roller Blind</h3>
+                <p>Minimalistic and sleek design for contemporary look.</p>
+                <a href="rollerblinds.html" class="btn-readmore">Read More →</a>
+            </div>
+        </div>
+
+        <!-- Roman Blind -->
+        <div class="product-card">
+            <a href="romanblinds.html">
+                <div class="product-image">
+                    <img src="images/ro6.jpg" alt="Roman Blind">
+                </div>
+            </a>
+            <div class="product-info">
+                <h3>Roman Blind</h3>
+                <p>Soft fabric blinds that fold into graceful pleats.</p>
+                <a href="romanblinds.html" class="btn-readmore">Read More →</a>
+            </div>
+        </div>
+
+        <!-- Skylight Blind -->
+        <div class="product-card">
+            <a href="skylightblinds.html">
+                <div class="product-image">
+                    <img src="images/s14.jpg" alt="Skylight Blind">
+                </div>
+            </a>
+            <div class="product-info">
+                <h3>Skylight Blind</h3>
+                <p>Modern blinds designed for stylish skylight windows.</p>
+                <a href="skylightblinds.html" class="btn-readmore">Read More →</a>
+            </div>
+        </div>
+
+        <!-- Twilight Blind -->
+        <div class="product-card">
+            <a href="twilightblinds.html">
+                <div class="product-image">
+                    <img src="images/t2.jpg" alt="Twilight Blind">
+                </div>
+            </a>
+            <div class="product-info">
+                <h3>Twilight Blind</h3>
+                <p>Elegant blinds offering privacy with light control.</p>
+                <a href="twilightblinds.html" class="btn-readmore">Read More →</a>
+            </div>
+        </div>
+
+        <!-- Venetian Blind -->
+        <div class="product-card">
+            <a href="venetianblinds.html">
+                <div class="product-image">
+                    <img src="images/ve14.jpg" alt="Venetian Blind">
+                </div>
+            </a>
+            <div class="product-info">
+                <h3>Venetian Blind</h3>
+                <p>Classic horizontal slats for adjustable shading.</p>
+                <a href="venetianblinds.html" class="btn-readmore">Read More →</a>
+            </div>
+        </div>
+
+        <!-- Vertical Blind -->
+        <div class="product-card">
+            <a href="verticalblinds.html">
+                <div class="product-image">
+                    <img src="images/ve11.jpg" alt="Vertical Blind">
+                </div>
+            </a>
+            <div class="product-info">
+                <h3>Vertical Blind</h3>
+                <p>Stylish vertical blinds for a sleek modern appeal.</p>
+                <a href="verticalblinds.html" class="btn-readmore">Read More →</a>
+            </div>
+        </div>
+
+        <!-- Zebra Blind -->
+        <div class="product-card">
+            <a href="zebrablinds.html">
+                <div class="product-image">
+                    <img src="images/z9.jpg" alt="Zebra Blind">
+                </div>
+            </a>
+            <div class="product-info">
+                <h3>Zebra Blind</h3>
+                <p>Perfect balance of privacy and natural lighting.</p>
+                <a href="zebrablinds.html" class="btn-readmore">Read More →</a>
+            </div>
+        </div>
+
+        <!-- Ziptrack Blind -->
+        <div class="product-card">
+            <a href="ziptrackblinds.html">
+                <div class="product-image">
+                    <img src="images/zi5.jpg" alt="Ziptrack Blind">
+                </div>
+            </a>
+            <div class="product-info">
+                <h3>Ziptrack Blind</h3>
+                <p>Outdoor blinds with a guided track system.</p>
+                <a href="ziptrackblinds.html" class="btn-readmore">Read More →</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+    
+<!-- Fixed Contact -->
+<div class="vertical-contact-bar">
+    <a href="https://api.whatsapp.com/send?phone=916380655921&text=Hey%20Bao%20Blinds,%20can%20you%20share%20me%20more%20details,%20I%20am%20located%20at" target="_blank" class="whatsapp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:+916379499902" class="phone">
+      <i class="fa fa-phone"></i>
+    </a>
+    <a href="mailto:info@baoblinds.com" class="email">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+   
+<!-- Javascript files-->
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery-3.0.0.min.js"></script>
+<script src="js/plugin.js"></script>
+<!-- sidebar -->
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/custom.js"></script>
+    <script>
+        // Lightbox Functionality
+        function openLightbox(imgSrc) {
+            document.getElementById("lightbox-img").src = imgSrc;
+            document.getElementById("lightbox").classList.add("show");
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").classList.remove("show");
+        }
+    </script>
+
+</body>
+</html>

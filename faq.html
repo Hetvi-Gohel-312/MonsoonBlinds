@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Monsoon Blinds</title>
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!-- Responsive-->
+    <link rel="stylesheet" href="css/responsive.css" />
+    <!-- fevicon -->
+    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <!-- font css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css" />
+    <!-- Tweaks for older IEs-->
+    <link
+      rel="stylesheet"
+      href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
+    />
+    <style>
+        /* General Styles */
+      * {
+        box-sizing: border-box;
+        transition: all 0.3s ease-in-out;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+        color: #333;
+        line-height: 1.8;
+        font-weight: normal;
+        overflow-x: hidden;
+        background-image: url("images/banner-bg.png"),
+          url("images/client-bg.png"), url("images/banner-bg.png");
+        background-position: top, center , bottom;
+        background-repeat: no-repeat, no-repeat;
+        background-size: 100% auto, 100% auto;
+      }
+        /* Additional Styling for Premium FAQ Design */
+
+        .navbar-expand-lg .navbar-nav .nav-link {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: black;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: color 0.3s, background 0.3s;
+}
+
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #ffffff;
+    background-color: #d78373;
+    border-radius: 10px;
+}
+
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show>.nav-link {
+    color: blue;
+}
+
+.navbar-brand {
+    margin: 0px;
+    float: right;
+}
+
+.navbar {
+    .navbar {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.9);
+        transition: all 0.3s;
+     }
+     
+}   
+        .faq-container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 20px;
+            background: #fff;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        text-align: left;
+        }
+
+        .faq-header {
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+            color: #d77a61;
+            margin-bottom: 30px;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: #d77a61;
+            color: white;
+            padding: 15px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #b85b49;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 15px 20px;
+            font-size: 16px;
+            color: #555;
+            background: #f9f9f9;
+            border-top: 2px solid #d77a61;
+        }
+
+        .faq-icon {
+            font-size: 22px;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        @media (max-width: 768px) {
+  
+
+  .faq-container {
+    max-width: 90%;
+    margin: 30px auto;
+    padding: 15px;
+  }
+
+  .faq-header {
+    font-size: 28px;
+  }
+
+  .faq-question {
+    font-size: 16px;
+    padding: 12px 15px;
+  }
+
+  .faq-answer {
+    font-size: 14px;
+    padding: 12px 15px;
+  }
+
+  .faq-icon {
+    font-size: 18px;
+  }
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <h1 style="font-size: clamp(18px, 8vw, 36px) ; color: black"><b> Bao Blinds </b></h1>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                      <a class="nav-link " href="products.html">Product</a>
+                  </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="all-cities.html">All Cities</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+    <div class="faq-container">
+        <h1 class="faq-header">Frequently Asked Questions</h1>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                What are monsoon blinds? 
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Monsoon blinds are weather-resistant outdoor blinds designed to protect against rain, wind, and sun while maintaining visibility and ventilation.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Where are monsoon blinds commonly used?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                They are commonly used in balconies, patios, restaurants, cafes, beachside resorts, and open terraces to provide protection from harsh weather conditions.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Are Monsoon Blinds waterproof?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Absolutely! They are completely waterproof, ensuring protection from heavy rain and moisture.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Can monsoon blinds withstand strong winds?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Yes, when properly installed with side tracks, zip channels, or weighted bottom bars, monsoon blinds can withstand wind speeds of 40-100 km/h, depending on the material.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Do monsoon blinds block sunlight?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Yes, monsoon blinds with UV-coated or tinted materials help reduce heat and block harmful UV rays while allowing natural light to enter.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Are monsoon blinds transparent?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Monsoon blinds are available in transparent PVC, tinted acrylic, and fabric options, allowing different levels of visibility.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                What are the main materials used in monsoon blinds?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                The most common materials include PVC (clear or tinted), acrylic, and HDPE fabric with reinforced mesh.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Are monsoon blinds suitable for extreme climates?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Yes, they work well in hot, cold, and humid conditions, providing heat insulation in summer and wind protection in winter.
+            </div>
+        </div>
+
+        <!--Installation & Setup-->
+        <h1 class="faq-header">Installation & Setup</h1>
+        <div class="faq-item">
+            <div class="faq-question">
+                How long does it take to install monsoon blinds?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Installation takes approximately 30 minutes to 1 hour per blind. For multiple blinds or motorized versions, installation may take 2-4 hours.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Can I install monsoon blinds myself?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Yes, DIY installation is possible, but for motorized blinds or large areas, professional installation is recommended.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                What is the best way to mount monsoon blinds?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                They can be mounted on the ceiling, walls, or inside a frame using heavy-duty brackets and screws.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Do I need special tools for installation?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Basic tools like a drill, measuring tape, screws, and level are needed. Motorized blinds may require electrical wiring.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Can monsoon blinds be installed on glass windows?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Yes, they can be installed on window frames or above glass areas to provide extra weather protection.
+
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                What are zip-track monsoon blinds?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                These are monsoon blinds with side-guided tracks that prevent flapping and offer better wind resistance.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                How much space is needed for installing monsoon blinds?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Typically, 5-6 inches of clearance is needed for the roller mechanism.
+
+            </div>
+        </div>
+
+        <!--Functionality & Performance-->
+        <h1 class="faq-header">Functionality & Performance</h1>
+        <div class="faq-item">
+            <div class="faq-question">
+                Do monsoon blinds completely block water?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                While they block 90-100% of rain, small gaps at the sides or bottom may allow minimal water seepage in heavy storms.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                Can monsoon blinds reduce noise?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Yes, PVC and acrylic blinds help reduce outdoor noise to some extent.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                How much wind pressure can monsoon blinds handle?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Standard monsoon blinds can withstand 40-60 km/h winds, while reinforced zip-track versions can handle up to 100 km/h.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                Are monsoon blinds heat-resistant?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Yes, UV-coated blinds reduce heat absorption, keeping interiors cooler.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                Do monsoon blinds allow air circulation?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Fabric-based blinds allow some ventilation, while PVC and acrylic blinds may require slight openings for airflow.
+            </div>
+        </div>
+
+        <!--Durability & Maintenance-->
+        <h1 class="faq-header">Durability & Maintenance</h1>
+        <div class="faq-item">
+            <div class="faq-question">
+                What is the lifespan of monsoon blinds?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                With proper care, monsoon blinds can last 5-10 years, depending on the material.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                Do monsoon blinds fade over time?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                UV-resistant materials prevent fading, but low-quality blinds may discolor over time.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                How do I clean monsoon blinds?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Use a damp cloth, mild soap, and water to wipe off dust and stains. Avoid harsh chemicals.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                Are monsoon blinds prone to mold or fungus?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                No, most materials are fungus-resistant, but regular cleaning prevents buildup in humid areas.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                Can monsoon blinds be repaired if damaged?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Small tears in PVC can be patched, but heavily damaged blinds may need replacement.
+            </div>
+        </div>
+
+        <!--Usage in Different Locations-->
+        <h1 class="faq-header">Usage in Different Locations</h1>
+        <div class="faq-item">
+            <div class="faq-question">
+                Can I use monsoon blinds in beachside properties?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Yes, they protect against saltwater, humidity, and strong coastal winds.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                Are monsoon blinds good for restaurants and cafes?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Yes, they provide weather protection while keeping outdoor seating areas comfortable.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                Can monsoon blinds be used in high-rise buildings?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Yes, they work well for balconies and terraces in high-rises, provided they are securely installed.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                Are monsoon blinds pet-friendly?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Yes, they create a safe outdoor space for pets by blocking rain and wind.
+            </div>
+        </div>
+
+        <!--Types & Customization-->
+        <h1 class="faq-header">Types & Customization</h1>
+        <div class="faq-item">
+            <div class="faq-question">
+                What types of monsoon blinds are available?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Options include manual, motorized, transparent PVC, tinted acrylic, and fabric-based blinds.
+
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                Can I get custom-sized monsoon blinds?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Yes, most manufacturers offer custom sizes and colors.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                Do motorized monsoon blinds require regular maintenance?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                They need occasional lubrication and electrical checks.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                Are there eco-friendly monsoon blinds?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Some HDPE fabric blinds are made from recyclable materials.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                Can monsoon blinds be rolled up when not in use?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Yes, they can be easily rolled up or retracted.
+            </div>
+        </div>
+
+        <!--Cost & Availability-->
+        <h1 class="faq-header">Cost & Availability</h1>
+        <div class="faq-item">
+            <div class="faq-question">
+                What is the price range of monsoon blinds?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Prices range from ₹300 to ₹1,500 per sq. ft., depending on material and features.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                Where can I buy monsoon blinds?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                They are available at home improvement stores, online marketplaces, and specialized blind manufacturers.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                Are monsoon blinds a one-time investment?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Yes, with proper maintenance, they last for several years, making them a cost-effective choice.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                Do motorized monsoon blinds require electricity?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Yes, they need a power source, but battery-operated versions are available.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Is installation cost included when purchasing blinds?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Some sellers offer free installation, while others charge separately.
+            </div>
+        </div>
+        <!--Technical Features-->
+        <h1 class="faq-header">Technical Features</h1>
+        <div class="faq-item">
+            <div class="faq-question">
+                What technology is used in manufacturing monsoon blinds?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Monsoon blinds use UV-resistant polymer coatings, reinforced PVC, and zip-track mechanisms for durability.
+        </div>
+    </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Do monsoon blinds come with warranty?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Yes, most brands offer 1-5 years of warranty.
+        </div>
+    </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Can monsoon blinds be automated with smart home systems?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Yes, motorized blinds can integrate with smart home setups.
+        </div>
+    </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Are there fire-resistant monsoon blinds?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Some fire-retardant PVC blinds are available for added safety.
+        </div>
+    </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Can monsoon blinds handle heavy snowfall?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                PVC blinds can withstand light snowfall, but extreme cold may cause brittleness.
+        </div>
+    </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Do monsoon blinds work with remote control?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Yes, motorized versions can be controlled via remote, smartphone app, or voice assistant.
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll(".faq-question").forEach((question) => {
+            question.addEventListener("click", () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle("active");
+            });
+        });
+    </script>
+
+</body>
+</html>
